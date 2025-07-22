@@ -23,6 +23,7 @@
     "flowbite": "^2.4.1",
     "language-translate": "^2.2.5",
     "nuxt": "^3.12.2",
+    "three": "^0.178.0",
     "vue": "latest"
   }
 }
