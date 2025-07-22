@@ -1,4 +1,6 @@
 <script setup>
+import { onMounted } from 'vue'
+
 const { locale } = useI18n()
 const translate = useNuxtApp().$i18n.t
 
@@ -81,11 +83,59 @@ const selectSKU = (sku) => {
 
 onMounted(() => {
   stateMerchant.info(false);
+
+  // 注入赛博朋克背景效果
+  import('three').then(THREE => {
+    import('vanta/dist/vanta.net.min').then(VANTA => {
+      VANTA.default({
+        el: "#vanta-bg",
+        THREE: THREE,
+        color: 0xff00ff,
+        backgroundColor: 0x000000,
+        points: 10.0,
+        spacing: 18.0
+      });
+    });
+  });
+
+  // 注入 Matrix Rain
+  const canvas = document.getElementById("matrixRain");
+  if (canvas) {
+    const ctx = canvas.getContext("2d");
+    canvas.height = window.innerHeight;
+    canvas.width = window.innerWidth;
+
+    const matrix = "アカサタナハマヤラワ0123456789".split("");
+    const font_size = 12;
+    const columns = canvas.width / font_size;
+    const drops = new Array(Math.floor(columns)).fill(1);
+
+    function draw() {
+      ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = "#0F0";
+      ctx.font = font_size + "px monospace";
+
+      for (let i = 0; i < drops.length; i++) {
+        const text = matrix[Math.floor(Math.random() * matrix.length)];
+        ctx.fillText(text, i * font_size, drops[i] * font_size);
+        if (drops[i] * font_size > canvas.height && Math.random() > 0.975) {
+          drops[i] = 0;
+        }
+        drops[i]++;
+      }
+    }
+
+    setInterval(draw, 33);
+  }
 });
 </script>
 
-
 <template>
+  <!-- 动态背景层 -->
+  <div id="vanta-bg" style="position:fixed;z-index:-2;width:100vw;height:100vh;"></div>
+  <canvas id="matrixRain" style="position:fixed;z-index:-1;width:100vw;height:100vh;"></canvas>
+
   <section class="flex justify-center">
     <div v-if="isNotEmptyObj(merchant)" class="w-full max-w-screen-xl space-y-4 px-4 my-2">
 
@@ -131,7 +181,6 @@ onMounted(() => {
           {{ selectedCate.name }}
         </div>
 
-        <!--skus-->
         <div
           class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-x-3 gap-y-4">
           <div v-for=" sku in skus" @click="selectSKU(sku)"
@@ -148,12 +197,12 @@ onMounted(() => {
 
             <div class="card-body">
 
-              <div class="project-name text-xs text-gray-400 text-center">
+              <div class="project-name text-xs text-gray-400 text-center cyberpunk-text">
                 {{ nameI18n(locale, sku.project) }}
               </div>
 
               <div class="sku-name h-14 text-center">
-                <span class="text-lg font-medium">
+                <span class="text-lg font-medium cyberpunk-text">
                   {{ nameI18n(locale, sku) }}
                 </span>
               </div>
@@ -177,32 +226,36 @@ onMounted(() => {
   </section>
 </template>
 
-
-
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+
+body {
+  font-family: 'Orbitron', sans-serif;
+  background-color: #000;
+  color: #0ff;
+}
+
+.cyberpunk-text {
+  text-shadow:
+    0 0 5px #0ff,
+    0 0 10px #0ff,
+    0 0 20px #0ff,
+    0 0 40px #f0f;
+}
+
 .project-name {
   display: -webkit-box;
-  /* 将元素作为弹性伸缩盒子展示 */
   -webkit-line-clamp: 1;
-  /* 限制文本行数为 1 行 */
   -webkit-box-orient: vertical;
-  /* 设置伸缩盒子为垂直方向 */
   overflow: hidden;
-  /* 隐藏溢出文本 */
   text-overflow: ellipsis;
-  /* 使用省略号截断溢出文本 */
 }
 
 .sku-name {
   display: -webkit-box;
-  /* 将元素作为弹性伸缩盒子展示 */
   -webkit-line-clamp: 2;
-  /* 限制文本行数为 2 行 */
   -webkit-box-orient: vertical;
-  /* 设置伸缩盒子为垂直方向 */
   overflow: hidden;
-  /* 隐藏溢出文本 */
   text-overflow: ellipsis;
-  /* 使用省略号截断溢出文本 */
 }
 </style>
