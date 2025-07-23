@@ -27,12 +27,27 @@ export default {
         inter: ['Inter', 'sans-serif'],
         mono: ['Roboto Mono', 'monospace'],
       },
+      textShadow: {
+        none: 'none',
+        subtle: '0 0 2px #00ffff, 0 0 4px #ff00ff',
+        glow: '0 0 5px #00ffff, 0 0 10px #00ffff',
+      },
+      typography: (theme) => ({
+        DEFAULT: {
+          css: {
+            color: theme('colors.neonBlue'),
+            fontFamily: theme('fontFamily.cyber'),
+            textShadow: theme('textShadow.none'),
+          },
+        },
+      }),
     },
   },
   plugins: [
     require('daisyui'),
     require('flowbite/plugin'),
     require('@tailwindcss/typography'),
+    require('tailwindcss-textshadow'), // 👈 新增插件
   ],
   daisyui: {
     themes: [
@@ -44,8 +59,8 @@ export default {
           accent: "#9b59b6",
           neutral: "#0d0d0d",
           "base-100": "#0f0f1a",
-        }
-      }
-    ]
-  }
+        },
+      },
+    ],
+  },
 }
