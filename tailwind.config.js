@@ -16,7 +16,7 @@ export default {
         deepBlack: '#0d0d0d',
         glassDark: 'rgba(0,0,0,0.6)',
         glassLight: 'rgba(255,255,255,0.1)',
-        lightText: '#ffffff', // 👈 亮文字
+        lightText: '#ffffff', 
       },
       boxShadow: {
         neon: '0 0 5px #00ffff, 0 0 10px #00ffff',
@@ -36,9 +36,9 @@ export default {
       typography: (theme) => ({
         DEFAULT: {
           css: {
-            color: theme('colors.lightText'), // 👈 提亮文字默认颜色
+            color: theme('colors.lightText'), 
             fontFamily: theme('fontFamily.cyber'),
-            textShadow: theme('textShadow.none'), // 👈 禁用默认文字阴影
+            textShadow: theme('textShadow.none'), 
             strong: { color: theme('colors.lightText') },
             h1: { color: theme('colors.lightText') },
             h2: { color: theme('colors.lightText') },
