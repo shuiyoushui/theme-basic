@@ -125,9 +125,10 @@ onMounted(() => {
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
 
+/* 去掉 text-shadow 发光 */
 body {
   font-family: 'Orbitron', sans-serif;
   background-color: #000;
   color: #0ff;
+  /* text-shadow: 0 0 5px #0ff, 0 0 10px #0ff; */ /* 删除或注释掉这一行 */
 }
-</style>
