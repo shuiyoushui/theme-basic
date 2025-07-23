@@ -28,7 +28,7 @@ watchEffect(() => {
       <svg
         class="flex-shrink-0 w-4 h-4 text-red-400"
         aria-hidden="true"
-        xmlns="http://www.w3.org/2000/svg"
+        xmlns="http:/*www.w3.org/2000/svg" */
         fill="currentColor"
         viewBox="0 0 20 20"
       >
@@ -53,7 +53,7 @@ watchEffect(() => {
       <svg
         class="flex-shrink-0 w-4 h-4 text-cyan-400"
         aria-hidden="true"
-        xmlns="http://www.w3.org/2000/svg"
+        xmlns="http:/*www.w3.org/2000/svg" */
         fill="currentColor"
         viewBox="0 0 20 20"
       >

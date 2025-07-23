@@ -4,7 +4,7 @@ const localePath = useLocalePath()
 const order = useDataOrder()
 
 const payStatus = ref('')
-const orderErrorMsg = ref('')  // server_order_stock_not_enough server_order_project_or_sku_offline
+const orderErrorMsg = ref('')  /* server_order_stock_not_enough server_order_project_or_sku_offline */
 const expiredInterval = order.value.expiredInterval
 
 if (order.value.status === 'DONE') {
@@ -18,8 +18,8 @@ else if (order.value.status === 'PAID') {
 } else if (order.value.status === 'REFUND') {
   payStatus.value = 'REFUND'
 } else {
-  // judge order could pay
-  // project/sku not online
+  /* judge order could pay */
+  /* project/sku not online */
   if (order.value.project.status != 'ONLINE' || order.value.sku.status != 'ONLINE') {
     payStatus.value = 'ERROR'
     orderErrorMsg.value = 'server_order_project_or_sku_offline'
@@ -40,7 +40,7 @@ if (payStatus.value === 'WAIT') {
     if (orderRemainInterval > 0) {
       counterMinutes.value = parseInt(orderRemainInterval / 60)
       counterSeconds.value = parseInt(orderRemainInterval % 60)
-    } else {  // expired
+    } else {  /* expired */
       payStatus.value = 'EXPIRED'
     }
   }, 1000)

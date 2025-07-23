@@ -1,6 +1,6 @@
 <template>
   <div class="inline-flex items-center">
-    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" xmlns="http:/*www.w3.org/2000/svg"> */
       <g clip-path="url(#clip0_1596_1575)">
         <path
           d="M0.746338 16.1738C2.44185 20.7434 6.84037 23.9999 11.9999 23.9999C17.1595 23.9999 21.558 20.7434 23.2536 16.1738L11.9999 15.1304L0.746338 16.1738Z"

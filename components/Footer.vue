@@ -3,7 +3,7 @@
     <div class="mx-auto max-w-screen-xl py-4">
       <div class="text-gray-500 text-sm text-center">
         Powered by
-        <a target="_blank" href="https://github.com/iDataRiver/theme-basic" class="underline">@cryptoboost.</a>
+        <a target="_blank" href="https:/*github.com/iDataRiver/theme-basic" class="underline">@cryptoboost.</a> */
       </div>
     </div>
   </footer>

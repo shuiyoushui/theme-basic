@@ -1,6 +1,6 @@
 <template>
   <div class="inline-flex items-center">
-    <svg class="w-4 h-4" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg class="w-4 h-4" viewBox="0 0 512 512" fill="none" xmlns="http:/*www.w3.org/2000/svg"> */
       <mask id="a">
         <circle cx="256" cy="256" r="256" fill="#fff" />
       </mask>

@@ -40,7 +40,7 @@ const seoInit = (infoObj) => {
       {
         type: 'application/ld+json',
         children: JSON.stringify({
-          "@context": "http://schema.org",
+          "@context": "http:/*schema.org", */
           "@type": "BreadcrumbList",
           itemListElement
         })
