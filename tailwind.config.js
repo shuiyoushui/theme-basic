@@ -16,6 +16,7 @@ export default {
         deepBlack: '#0d0d0d',
         glassDark: 'rgba(0,0,0,0.6)',
         glassLight: 'rgba(255,255,255,0.1)',
+        lightText: '#ffffff', // 👈 亮文字
       },
       boxShadow: {
         neon: '0 0 5px #00ffff, 0 0 10px #00ffff',
@@ -35,9 +36,15 @@ export default {
       typography: (theme) => ({
         DEFAULT: {
           css: {
-            color: theme('colors.neonBlue'),
+            color: theme('colors.lightText'), // 👈 提亮文字默认颜色
             fontFamily: theme('fontFamily.cyber'),
-            textShadow: theme('textShadow.none'),
+            textShadow: theme('textShadow.none'), // 👈 禁用默认文字阴影
+            strong: { color: theme('colors.lightText') },
+            h1: { color: theme('colors.lightText') },
+            h2: { color: theme('colors.lightText') },
+            h3: { color: theme('colors.lightText') },
+            a: { color: theme('colors.neonBlue') },
+            code: { color: theme('colors.neonBlue') },
           },
         },
       }),
@@ -47,7 +54,7 @@ export default {
     require('daisyui'),
     require('flowbite/plugin'),
     require('@tailwindcss/typography'),
-    require('tailwindcss-textshadow'), // 👈 新增插件
+    require('tailwindcss-textshadow'),
   ],
   daisyui: {
     themes: [
