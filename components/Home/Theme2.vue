@@ -221,8 +221,7 @@ body {
 
 .cyberpunk-text {
   text-shadow:
-    0 0 2px #0ff,
-    0 0 4px #f0f;
+    none;
 }
 
 .project-name {
