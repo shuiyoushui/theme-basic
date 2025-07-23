@@ -62,7 +62,7 @@ const seoInit = (infoObj) => {
 seoInit(merchantInfo)
 
 onMounted(() => {
-  // 背景动画
+  /* 背景动画 */
   import('three').then(THREE => {
     import('vanta/dist/vanta.net.min').then(VANTA => {
       VANTA.default({
@@ -76,7 +76,7 @@ onMounted(() => {
     })
   })
 
-  // Matrix Rain
+  /* Matrix Rain */
   const canvas = document.getElementById("matrixRain")
   if (canvas) {
     const ctx = canvas.getContext("2d")
@@ -123,7 +123,6 @@ onMounted(() => {
 </template>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
 
 body {
   font-family: 'Orbitron', sans-serif;

@@ -27,5 +27,9 @@
     "unhead": "1.8.6",
     "vanta": "^0.5.24",
     "vue": "latest"
+  },
+  "devDependencies": {
+    "postcss": "^8.5.6",
+    "postcss-import": "^16.1.1"
   }
 }
