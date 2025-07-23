@@ -60,7 +60,6 @@ const seoInit = (infoObj) => {
 seoInit(merchantInfo)
 
 onMounted(() => {
-  // Vanta 动效背景
   import('three').then(THREE => {
     import('vanta/dist/vanta.net.min').then(VANTA => {
       VANTA.default({
@@ -74,7 +73,6 @@ onMounted(() => {
     })
   })
 
-  // Matrix Rain
   const canvas = document.getElementById("matrixRain")
   if (canvas) {
     const ctx = canvas.getContext("2d")
