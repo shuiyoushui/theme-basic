@@ -81,7 +81,7 @@ onMounted(() => {
 
     const matrix = "アカサタナハマヤラワ0123456789".split("")
     const font_size = 12
-    const columns = canvas.width / font_size
+    const columns = canvas.width 
     const drops = new Array(Math.floor(columns)).fill(1)
 
     function draw() {
