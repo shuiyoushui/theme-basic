@@ -129,7 +129,7 @@ body {
   font-family: 'Orbitron', sans-serif;
   background-color: #000;
   color: #0ff;
-  /* 如果你想去掉字体发光，注释或删除下面这一行 */
-  /* text-shadow: 0 0 5px #0ff, 0 0 10px #0ff; */
+  //* 如果你想去掉字体发光，注释或删除下面这一行 */
+  //* text-shadow: 0 0 5px #0ff, 0 0 10px #0ff; */
 }
 </style>

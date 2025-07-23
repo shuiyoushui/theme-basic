@@ -23,6 +23,9 @@ export default {
       },
       fontFamily: {
         cyber: ['Orbitron', 'sans-serif'],
+        orbitron: ['Orbitron', 'sans-serif'],
+        inter: ['Inter', 'sans-serif'],
+        mono: ['Roboto Mono', 'monospace'],
       },
     },
   },
