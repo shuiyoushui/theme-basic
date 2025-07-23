@@ -40,7 +40,7 @@ const seoInit = (infoObj) => {
       {
         type: 'application/ld+json',
         children: JSON.stringify({
-          "@context": "http:/*schema.org", */
+          "@context": "http://schema.org",
           "@type": "BreadcrumbList",
           itemListElement
         })
@@ -81,7 +81,7 @@ onMounted(() => {
 
     const matrix = "アカサタナハマヤラワ0123456789".split("")
     const font_size = 12
-    const columns = canvas.width 
+    const columns = canvas.width / font_size
     const drops = new Array(Math.floor(columns)).fill(1)
 
     function draw() {
@@ -117,12 +117,3 @@ onMounted(() => {
   </NuxtLayout>
 </template>
 
-<style>
-body {
-  font-family: 'Orbitron', sans-serif;
-  background-color: #000;
-  color: #0ff;
-}
-</style>
-
-<!-- 字体通过 nuxt.config.ts 或 app.vue 注入 link 更稳妥 -->
