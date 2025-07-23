@@ -3,71 +3,69 @@ import { onMounted } from 'vue'
 
 const { locale } = useI18n()
 const merchantInfo = await stateMerchant.info(true)
-const themeId = merchantInfo.website ? merchantInfo.website.theme : '1'
+const themeId = merchantInfo.website?.theme || '1'
 
 const seoInit = (infoObj) => {
   const info = isRef(infoObj) ? infoObj.value : infoObj
-  if (isNotEmptyObj(info)) {
-    const url = useRequestURL().href
-    const title = nameI18n(locale, info)
-    let description = descI18n(locale, info).replace(/[\r\n]/g, ' ')
+  if (!isNotEmptyObj(info)) return
 
-    let itemListElement = []
-    info.projects.forEach(project => {
-      description += '|' + nameI18n(locale, project)
+  const url = useRequestURL().href
+  const title = nameI18n(locale, info)
+  let description = descI18n(locale, info).replace(/[\r\n]/g, ' ')
+  let itemListElement = []
 
-      if (!project.skus) { return }
-      project.skus.forEach(sku => {
-        itemListElement.push({
-          "@type": "ListItem",
-          "position": itemListElement.length + 1,
-          "item": {
-            "@id": `${url}#${sku.id}`,
-            "name": nameI18n(locale, sku)
-          }
-        })
+  info.projects?.forEach(project => {
+    description += '|' + nameI18n(locale, project)
+    project?.skus?.forEach(sku => {
+      itemListElement.push({
+        "@type": "ListItem",
+        "position": itemListElement.length + 1,
+        "item": {
+          "@id": `${url}#${sku.id}`,
+          "name": nameI18n(locale, sku)
+        }
       })
     })
+  })
 
-    useHead({
-      title: title,
-      meta: [
-        { 'name': 'description', 'content': description },
-        { 'itemprop': 'name', 'content': title },
-        { 'itemprop': 'description', 'content': description },
-        { 'itemprop': 'url', 'content': url },
-      ],
-      script: [
-        {
-          type: 'application/ld+json',
-          children: JSON.stringify({
-            "@context": "http://schema.org",
-            "@type": "BreadcrumbList",
-            "itemListElement": itemListElement
-          })
-        }
-      ],
-    })
+  useHead({
+    title,
+    meta: [
+      { name: 'description', content: description },
+      { itemprop: 'name', content: title },
+      { itemprop: 'description', content: description },
+      { itemprop: 'url', content: url }
+    ],
+    script: [
+      {
+        type: 'application/ld+json',
+        children: JSON.stringify({
+          "@context": "http://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement
+        })
+      }
+    ]
+  })
 
-    useSeoMeta({
-      ogType: 'website',
-      ogSiteName: title,
-      ogTitle: title,
-      ogUrl: url,
-      ogDescription: description,
-    })
-  }
+  useSeoMeta({
+    ogType: 'website',
+    ogSiteName: title,
+    ogTitle: title,
+    ogUrl: url,
+    ogDescription: description
+  })
 }
 
 seoInit(merchantInfo)
 
 onMounted(() => {
-  /* 背景动画 */
+  // Vanta 动效背景
   import('three').then(THREE => {
     import('vanta/dist/vanta.net.min').then(VANTA => {
       VANTA.default({
         el: "#vanta-bg",
-        THREE: THREE,
+        THREE,
         color: 0xff00ff,
         backgroundColor: 0x000000,
         points: 10.0,
@@ -76,7 +74,7 @@ onMounted(() => {
     })
   })
 
-  /* Matrix Rain */
+  // Matrix Rain
   const canvas = document.getElementById("matrixRain")
   if (canvas) {
     const ctx = canvas.getContext("2d")
@@ -93,7 +91,6 @@ onMounted(() => {
       ctx.fillRect(0, 0, canvas.width, canvas.height)
       ctx.fillStyle = "#0F0"
       ctx.font = font_size + "px monospace"
-
       for (let i = 0; i < drops.length; i++) {
         const text = matrix[Math.floor(Math.random() * matrix.length)]
         ctx.fillText(text, i * font_size, drops[i] * font_size)
@@ -110,24 +107,24 @@ onMounted(() => {
 </script>
 
 <template>
-  <!-- 背景动画元素 -->
+  <!-- 背景动效 -->
   <div id="vanta-bg" style="position:fixed;z-index:-2;width:100vw;height:100vh;"></div>
   <canvas id="matrixRain" style="position:fixed;z-index:-1;width:100vw;height:100vh;"></canvas>
 
-  <!-- 页面主内容 -->
+  <!-- 主内容区 -->
   <NuxtLayout name="simplified" :merchant="merchantInfo">
-    <HomeTheme1 v-if="themeId == '1'" :merchant="merchantInfo" />
-    <HomeTheme2 v-else-if="themeId == '2'" :merchant="merchantInfo" />
+    <HomeTheme1 v-if="themeId === '1'" :merchant="merchantInfo" />
+    <HomeTheme2 v-else-if="themeId === '2'" :merchant="merchantInfo" />
     <HomeTheme1 v-else :merchant="merchantInfo" />
   </NuxtLayout>
 </template>
 
 <style>
-
 body {
   font-family: 'Orbitron', sans-serif;
   background-color: #000;
   color: #0ff;
-  
 }
 </style>
+
+<!-- 字体通过 nuxt.config.ts 或 app.vue 注入 link 更稳妥 -->
