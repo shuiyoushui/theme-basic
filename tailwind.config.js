@@ -28,17 +28,12 @@ export default {
         inter: ['Inter', 'sans-serif'],
         mono: ['Roboto Mono', 'monospace'],
       },
-      textShadow: {
-        none: 'none',
-        subtle: '0 0 2px #00ffff, 0 0 4px #ff00ff',
-        glow: '0 0 5px #00ffff, 0 0 10px #00ffff',
-      },
+      
       typography: (theme) => ({
         DEFAULT: {
           css: {
             color: theme('colors.lightText'), 
             fontFamily: theme('fontFamily.cyber'),
-            textShadow: theme('textShadow.none'), 
             strong: { color: theme('colors.lightText') },
             h1: { color: theme('colors.lightText') },
             h2: { color: theme('colors.lightText') },
@@ -54,18 +49,20 @@ export default {
     require('daisyui'),
     require('flowbite/plugin'),
     require('@tailwindcss/typography'),
-    require('tailwindcss-textshadow'),
   ],
   daisyui: {
     themes: [
       {
         cyberpunk: {
-          ...require("daisyui/src/colors/themes")["[data-theme=cupcake]"],
-          primary: "#00ffff",
-          secondary: "#ff00ff",
-          accent: "#9b59b6",
-          neutral: "#0d0d0d",
-          "base-100": "#0f0f1a",
+        primary: "#00ffff",
+        secondary: "#ff00ff",
+        accent: "#9b59b6",
+        neutral: "#0d0d0d",
+        "base-100": "#0f0f1a",
+        info: "#3abff8",
+        success: "#36d399",
+        warning: "#fbbd23",
+        error: "#f87272",
         },
       },
     ],

@@ -1,7 +1,8 @@
 /* https://nuxt.com/docs/api/configuration/nuxt-config */
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  css: ['@/assets/css/main.css'],
+
+  css: ['~/assets/css/main.css'],
 
   app: {
     head: {
@@ -36,12 +37,6 @@ export default defineNuxtConfig({
     '@nuxtjs/sitemap',
     '@nuxt/image',
   ],
-
-  css: ['~/assets/css/main.css'],
-
-  nitro: {
-    compressPublicAssets: true,
-  },
 
   i18n: {
     vueI18n: './i18n.config.ts',
@@ -79,5 +74,17 @@ export default defineNuxtConfig({
 
   site: {
     autoLastmod: true,
+  },
+
+  postcss: {
+    plugins: {
+      tailwindcss: {},
+      autoprefixer: {},
+    },
+  },
+
+  nitro: {
+    compressPublicAssets: true,
+    compatibilityDate: '2025-07-24',
   },
 })
