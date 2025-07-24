@@ -34,7 +34,7 @@ export default defineNuxtConfig({
   ],
 
   sitemap: {
-    disableDefaultSitemapIndex: true, // ✅ 关键点，禁用 sitemap_index.xml
+    sitemapName: null,
     sitemaps: [
       { path: '/sitemap-en.xml', locale: 'en' },
       { path: '/sitemap-es.xml', locale: 'es' },
