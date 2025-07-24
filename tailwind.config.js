@@ -24,8 +24,8 @@ module.exports = {
         cyber: '0 0 10px #ff00ff, 0 0 20px #00ffff',
       },
       fontFamily: {
-        cyber: ['Orbitron', 'sans-serif'],
-        orbitron: ['Orbitron', 'sans-serif'],
+        cyber: ['Inter', 'sans-serif'],
+        orbitron: ['Inter', 'sans-serif'],
         inter: ['Inter', 'sans-serif'],
         mono: ['Roboto Mono', 'monospace'],
       },

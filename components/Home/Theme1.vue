@@ -229,7 +229,7 @@ onMounted(() => {
 <style>
 
 body {
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Inter', sans-serif;
   background-color: #000;
   color: #0ff;
 }

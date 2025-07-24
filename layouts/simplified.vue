@@ -66,7 +66,7 @@ const scripts = basicInfo.website ? basicInfo.website.script : ''
 body {
   background-color: #0f051d;
   color: #ffffff;
-  font-family: 'Orbitron', 'Segoe UI', 'Roboto', sans-serif;
+  font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
 }
 
 .btn-outline {

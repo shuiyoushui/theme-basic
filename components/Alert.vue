@@ -71,6 +71,6 @@ watchEffect(() => {
 
 <style scoped>
 .font-orbitron {
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 </style>

@@ -10,6 +10,6 @@
 <style>
 
 body {
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 </style>
