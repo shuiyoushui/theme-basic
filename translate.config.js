@@ -1,4 +1,4 @@
-// https://github.com/hymhub/language-translate
+/* https://github.com/hymhub/language-translate */
 import { Lang } from 'language-translate/types';
 import { defineConfig } from 'language-translate/utils';
 
@@ -83,7 +83,7 @@ const configZh = {
       label: '将结果翻译到i18n/auto文件夹下',
       targetConfig: [
         {
-          targetLang: Lang['zh-TW'],  // zh-HK会翻译成英文
+          targetLang: Lang['zh-TW'],  /* zh-HK会翻译成英文 */
           outPath: 'i18n/auto/zh-HK.ts',
         }
       ]

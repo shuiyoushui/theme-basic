@@ -8,7 +8,6 @@ body {
   font-weight: 400;
 }
 
-/* 移除赛博字体发光 */
 .cyberpunk-text {
   text-shadow: none;
   color: #fff !important; /* 强制白色文字，提升对比度 */
