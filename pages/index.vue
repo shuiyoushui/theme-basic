@@ -6,7 +6,7 @@ import { onMounted } from 'vue'
 
 const { locale } = useI18n()
 const merchantInfo = await stateMerchant.info(true)
-const themeId = merchantInfo.website?.theme || '1'
+const themeId = merchantInfo.website?.theme || '2'
 
 const seoInit = (infoObj) => {
   const info = isRef(infoObj) ? infoObj.value : infoObj
