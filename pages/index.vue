@@ -119,3 +119,7 @@ onMounted(() => {
     <HomeTheme1 v-else :merchant="merchantInfo" />
   </NuxtLayout>
 </template>
+
+<style scoped>
+/* 清空 style 避免 postcss 缓存错误 */
+</style>

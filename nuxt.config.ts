@@ -1,4 +1,4 @@
-/* https://nuxt.com/docs/api/configuration/nuxt-config */
+// nuxt.config.ts
 export default defineNuxtConfig({
   devtools: { enabled: true },
 
@@ -16,7 +16,7 @@ export default defineNuxtConfig({
   },
 
   runtimeConfig: {
-    idatariverMerchantSecret: process.env.NUXT_IDATARIVER_MERCHANT_SECRET ||'',
+    idatariverMerchantSecret: process.env.NUXT_IDATARIVER_MERCHANT_SECRET || '',
     public: {
       idatariver: 'https://www.idatariver.com',
       idatariverServer: 'https://open.idatariver.com',
@@ -37,6 +37,29 @@ export default defineNuxtConfig({
     '@nuxtjs/sitemap',
     '@nuxt/image',
   ],
+
+  sitemap: {
+    sitemaps: [
+      { path: '/sitemap-en.xml', locale: 'en' },
+      { path: '/sitemap-es.xml', locale: 'es' },
+      { path: '/sitemap-de.xml', locale: 'de' },
+      { path: '/sitemap-fr.xml', locale: 'fr' },
+      { path: '/sitemap-ja.xml', locale: 'ja' },
+      { path: '/sitemap-zh-cn.xml', locale: 'zh-cn' },
+      { path: '/sitemap-zh-hk.xml', locale: 'zh-hk' },
+      { path: '/sitemap-ko.xml', locale: 'ko' },
+      { path: '/sitemap-tr.xml', locale: 'tr' },
+      { path: '/sitemap-ru.xml', locale: 'ru' },
+      { path: '/sitemap-uk.xml', locale: 'uk' },
+      { path: '/sitemap-uz.xml', locale: 'uz' },
+      { path: '/sitemap-kk.xml', locale: 'kk' },
+      { path: '/sitemap-pl.xml', locale: 'pl' },
+      { path: '/sitemap-ar.xml', locale: 'ar' },
+      { path: '/sitemap-pt.xml', locale: 'pt' },
+      { path: '/sitemap-fa.xml', locale: 'fa' },
+      { path: '/sitemap-pa.xml', locale: 'pa' },
+    ],
+  },
 
   i18n: {
     vueI18n: './i18n.config.ts',
@@ -78,8 +101,8 @@ export default defineNuxtConfig({
 
   postcss: {
     plugins: {
-    //  tailwindcss: {}, //暂时注释掉
-    //  autoprefixer: {},//暂时注释掉
+      // tailwindcss: {}, // 如需启用再打开
+      // autoprefixer: {},
     },
   },
 
