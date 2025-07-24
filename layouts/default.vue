@@ -1,5 +1,5 @@
 <script setup>
-/* https:/*i18n.nuxtjs.org/guide/seo */ */
+/* https://i18n.nuxtjs.org/guide/seo */
 const head = useLocaleHead({
   addDirAttribute: true,
   identifierAttribute: 'id',
