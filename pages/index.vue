@@ -1,3 +1,6 @@
+<!-- pages/index.vue 顶部加入 -->
+<!-- === TESTING VERCEL BUILD - 2025-07-24 === -->
+
 <script setup>
 import { onMounted } from 'vue'
 
