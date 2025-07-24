@@ -1,4 +1,3 @@
-// nuxt.config.ts
 export default defineNuxtConfig({
   devtools: { enabled: true },
 
@@ -24,11 +23,7 @@ export default defineNuxtConfig({
     }
   },
 
-  components: [
-    {
-      path: '~/components',
-    },
-  ],
+  components: [{ path: '~/components' }],
 
   modules: [
     '@nuxtjs/tailwindcss',
@@ -39,7 +34,7 @@ export default defineNuxtConfig({
   ],
 
   sitemap: {
-    disableDefaultSitemapIndex: true, //  禁用默认 sitemap_index.xml
+    disableDefaultSitemapIndex: true, // ✅ 关键点，禁用 sitemap_index.xml
     sitemaps: [
       { path: '/sitemap-en.xml', locale: 'en' },
       { path: '/sitemap-es.xml', locale: 'es' },
@@ -59,7 +54,7 @@ export default defineNuxtConfig({
       { path: '/sitemap-pt.xml', locale: 'pt' },
       { path: '/sitemap-fa.xml', locale: 'fa' },
       { path: '/sitemap-pa.xml', locale: 'pa' },
-    ],
+    ]
   },
 
   i18n: {
@@ -102,8 +97,8 @@ export default defineNuxtConfig({
 
   postcss: {
     plugins: {
-      // tailwindcss: {}, // 如需启用再打开
-      // autoprefixer: {},
+      // tailwindcss: {}, // 可根据需要开启
+      // autoprefixer: {}, // 可根据需要开启
     },
   },
 
