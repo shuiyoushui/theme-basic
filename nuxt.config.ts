@@ -16,7 +16,7 @@ export default defineNuxtConfig({
   },
 
   runtimeConfig: {
-    idatariverMerchantSecret: '',
+    idatariverMerchantSecret: process.env.NUXT_IDATARIVER_MERCHANT_SECRET ||'',
     public: {
       idatariver: 'https://www.idatariver.com',
       idatariverServer: 'https://open.idatariver.com',
@@ -78,8 +78,8 @@ export default defineNuxtConfig({
 
   postcss: {
     plugins: {
-      tailwindcss: {},
-      autoprefixer: {},
+    //  tailwindcss: {}, //暂时注释掉
+    //  autoprefixer: {},//暂时注释掉
     },
   },
 

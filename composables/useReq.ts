@@ -22,8 +22,8 @@ const deal = async (url: string, requestOptions: any, isLoading: any) => {
     const alertError = useAlertError()
     const alertInfo = useAlertInfo()
     if (code === 1004) {
-      const localePath = useLocalePath()
-      navigateTo(localePath('/auth/signin'))
+     // const localePath = useLocalePath()
+     // navigateTo(localePath('/auth/signin'))
       alertError.value = useNuxtApp().$i18n.t('need_login')
     } else if (msg) {
       const msgI18n = msg.startsWith('i18n:') ? useNuxtApp().$i18n.t(msg.slice(5)) : msg

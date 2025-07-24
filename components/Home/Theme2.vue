@@ -1,5 +1,10 @@
-<style>
+<template>
+  <div class="p-8 text-center">
+    <h1 class="text-2xl text-white font-orbitron">🚧 Theme 2 页面尚未开发</h1>
+  </div>
+</template>
 
+<style>
 body {
   font-family: 'Orbitron', sans-serif;
   background-color: #000;
@@ -9,17 +14,15 @@ body {
 
 .cyberpunk-text {
   text-shadow: none;
-  color: #fff !important; /* 强制白色文字，提升对比度 */
+  color: #fff !important;
 }
 
-/* 修正 Project Title / Name 显示 */
 h2.cyberpunk-text {
   font-size: 1.1rem;
   font-weight: 600;
   color: #fff;
 }
 
-/* 修正表格与 SKU 信息颜色 */
 .table th {
   color: #00ffff !important;
   background-color: #111 !important;
@@ -28,7 +31,6 @@ h2.cyberpunk-text {
   color: #ccf !important;
 }
 
-/* 修正暗色主题下按钮 */
 .btn {
   color: #fff;
   border-color: #555;
@@ -38,7 +40,6 @@ h2.cyberpunk-text {
   color: #000;
 }
 
-/* 项目名与 SKU 文本省略处理 */
 .project-name {
   display: -webkit-box;
   -webkit-line-clamp: 1;

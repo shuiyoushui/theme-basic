@@ -5,14 +5,14 @@ const alertInfo = useAlertInfo()
 watchEffect(() => {
   if (alertError.value !== '') {
     setTimeout(() => {
-      alertError.value = '';
-    }, 3000);
+      alertError.value = ''
+    }, 3000)
   }
 
   if (alertInfo.value !== '') {
     setTimeout(() => {
-      alertInfo.value = '';
-    }, 3000);
+      alertInfo.value = ''
+    }, 3000)
   }
 })
 </script>
@@ -28,7 +28,7 @@ watchEffect(() => {
       <svg
         class="flex-shrink-0 w-4 h-4 text-red-400"
         aria-hidden="true"
-        xmlns="http:/*www.w3.org/2000/svg" */
+        xmlns="http://www.w3.org/2000/svg"
         fill="currentColor"
         viewBox="0 0 20 20"
       >
@@ -53,7 +53,7 @@ watchEffect(() => {
       <svg
         class="flex-shrink-0 w-4 h-4 text-cyan-400"
         aria-hidden="true"
-        xmlns="http:/*www.w3.org/2000/svg" */
+        xmlns="http://www.w3.org/2000/svg"
         fill="currentColor"
         viewBox="0 0 20 20"
       >

@@ -1,7 +1,14 @@
 <template>
   <div class="inline-flex items-center">
-    <svg class="w-4 h-4" version="1.1" id="Layer_1" xmlns="http:/*www.w3.org/2000/svg" */
-      xmlns:xlink="http:/*www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve"> */
+    <svg
+      class="w-4 h-4"
+      version="1.1"
+      id="Layer_1"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      viewBox="0 0 512 512"
+      xml:space="preserve"
+    >
       <circle style="fill:#D80027;" cx="256" cy="256" r="256" />
       <g>
         <path style="fill:#F0F0F0;" d="M282.43,193.668c-5.818,24.199-16.155,19.584-21.228,40.688

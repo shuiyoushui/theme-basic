@@ -1,11 +1,12 @@
-/* @type {import('tailwindcss').Config} */
-export default {
+/** @type {import('tailwindcss').Config} */
+module.exports = {
   content: [
-    "./node_modules/flowbite/**/*.{js,ts}",
-    "./components/**/*.{js,ts,vue}",
-    "./layouts/**/*.{js,ts,vue}",
-    "./pages/**/*.{js,ts,vue}",
-    "./app.vue",
+    './node_modules/flowbite/**/*.{js,ts}',
+    './components/**/*.{js,ts,vue}',
+    './layouts/**/*.{js,ts,vue}',
+    './pages/**/*.{js,ts,vue}',
+    './app.vue',
+    './nuxt.config.ts',
   ],
   theme: {
     extend: {
@@ -16,7 +17,7 @@ export default {
         deepBlack: '#0d0d0d',
         glassDark: 'rgba(0,0,0,0.6)',
         glassLight: 'rgba(255,255,255,0.1)',
-        lightText: '#ffffff', 
+        lightText: '#ffffff',
       },
       boxShadow: {
         neon: '0 0 5px #00ffff, 0 0 10px #00ffff',
@@ -28,11 +29,10 @@ export default {
         inter: ['Inter', 'sans-serif'],
         mono: ['Roboto Mono', 'monospace'],
       },
-      
       typography: (theme) => ({
         DEFAULT: {
           css: {
-            color: theme('colors.lightText'), 
+            color: theme('colors.lightText'),
             fontFamily: theme('fontFamily.cyber'),
             strong: { color: theme('colors.lightText') },
             h1: { color: theme('colors.lightText') },
@@ -54,15 +54,15 @@ export default {
     themes: [
       {
         cyberpunk: {
-        primary: "#00ffff",
-        secondary: "#ff00ff",
-        accent: "#9b59b6",
-        neutral: "#0d0d0d",
-        "base-100": "#0f0f1a",
-        info: "#3abff8",
-        success: "#36d399",
-        warning: "#fbbd23",
-        error: "#f87272",
+          primary: '#00ffff',
+          secondary: '#ff00ff',
+          accent: '#9b59b6',
+          neutral: '#0d0d0d',
+          'base-100': '#0f0f1a',
+          info: '#3abff8',
+          success: '#36d399',
+          warning: '#fbbd23',
+          error: '#f87272',
         },
       },
     ],
