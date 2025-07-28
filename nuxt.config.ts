@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
 
-  // ✅ 添加 GA 的 app.head 配置
+  //  添加 GA 的 app.head 配置
   app: {
     head: {
       script: [
@@ -25,7 +25,9 @@ export default defineNuxtConfig({
       ],
       __dangerouslyDisableSanitizersByTagID: {
         'gtag-init': ['innerHTML']
-      }
+      },
+      __dangerouslyDisableSanitizers: ['script']
+
     }
   },
 
