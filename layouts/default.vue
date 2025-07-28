@@ -28,7 +28,7 @@ useSeoMeta({
       <template v-for="meta in head.meta" :key="meta.id">
         <Meta :id="meta.id" :property="meta.property" :content="meta.content" />
       </template>
-      <link rel="stylesheet" href="href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" /> 
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" /> 
 
     </Head>
 
