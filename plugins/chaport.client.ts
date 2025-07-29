@@ -1,22 +1,25 @@
 // plugins/chaport.client.ts
 declare global {
   interface Window {
-    chaportConfig?: {
-      appId: string
-    }
+    chaportConfig?: { appId: string }
     chaport?: any
-    __assets?: any
+    chaportInitResult?: any
   }
 }
 
 export default defineNuxtPlugin(() => {
   if (process.client) {
-    // ✅ 提前配置 chaportConfig
+    // ✅ 设置 config
     window.chaportConfig = {
       appId: '6888b22fb1d3d5d22493d690'
     }
 
-    // ✅ 延迟 50ms 防止首屏加载与 chaport 冲突
+    // ✅ 避免 insert.js 报错
+    if (!window.chaport) {
+      window.chaport = {}
+    }
+
+    // ✅ 安全延迟加载 script，避免影响主页面渲染
     setTimeout(() => {
       const script = document.createElement('script')
       script.src = 'https://app.chaport.com/javascripts/insert.js'
@@ -25,10 +28,6 @@ export default defineNuxtPlugin(() => {
 
       script.onload = () => {
         console.log('[Chaport] 插件加载完成')
-        // ✅ 确保 __assets 不为空，避免后续脚本访问时报错
-        if (!window.__assets) {
-          window.__assets = {}
-        }
       }
 
       script.onerror = () => {
@@ -36,6 +35,6 @@ export default defineNuxtPlugin(() => {
       }
 
       document.head.appendChild(script)
-    }, 50) // 轻微延迟注入
+    }, 100) // ✅ 可根据需要再延长一点
   }
 })
