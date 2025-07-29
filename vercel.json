@@ -1,7 +1,7 @@
 {
   "headers": [
     {
-      "source": "/(.*)",  // 对所有路径生效
+      "source": "/(.*)",  /* 对所有路径生效 */
       "headers": [
         {
           "key": "Content-Security-Policy",
@@ -10,7 +10,7 @@
       ]
     },
     {
-      "source": "/(.*)\\.(js|css|ttf|otf|woff2)",  // 保留你的原缓存配置
+      "source": "/(.*)\\.(js|css|ttf|otf|woff2)",  /* 保留你的原缓存配置 */
       "headers": [
         {
           "key": "Cache-Control",
