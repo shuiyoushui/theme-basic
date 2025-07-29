@@ -1,7 +1,7 @@
 {
   "headers": [
     {
-      "source": "/(.*)",  /* 对所有路径生效 */
+      "source": "/(.*)",
       "headers": [
         {
           "key": "Content-Security-Policy",
@@ -10,7 +10,7 @@
       ]
     },
     {
-      "source": "/(.*)\\.(js|css|ttf|otf|woff2)$",  /* 正则表达式末尾需加 $ */
+      "source": "/(.*)\\.(js|css|ttf|otf|woff2)$",
       "headers": [
         {
           "key": "Cache-Control",
