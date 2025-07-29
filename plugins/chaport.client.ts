@@ -1,43 +1,41 @@
 // plugins/chaport.client.ts
-
 declare global {
   interface Window {
     chaportConfig?: {
       appId: string
     }
     chaport?: any
-    __assets?: any // 可选声明，用于安全判断
+    __assets?: any
   }
 }
 
 export default defineNuxtPlugin(() => {
   if (process.client) {
+    // ✅ 提前配置 chaportConfig
     window.chaportConfig = {
       appId: '6888b22fb1d3d5d22493d690'
     }
 
-    const script = document.createElement('script')
-    script.src = 'https://app.chaport.com/javascripts/insert.js'
-    script.async = true
-    script.type = 'text/javascript'
+    // ✅ 延迟 50ms 防止首屏加载与 chaport 冲突
+    setTimeout(() => {
+      const script = document.createElement('script')
+      script.src = 'https://app.chaport.com/javascripts/insert.js'
+      script.async = true
+      script.type = 'text/javascript'
 
-    script.onload = () => {
-      try {
-        // ✅ 防御式检查，避免访问未定义对象报错
-        if (typeof window.__assets !== 'undefined') {
-          console.log('[Chaport] 插件加载完成，__assets 可用')
-        } else {
-          console.warn('[Chaport] 插件加载完成，但 window.__assets 未定义')
+      script.onload = () => {
+        console.log('[Chaport] 插件加载完成')
+        // ✅ 确保 __assets 不为空，避免后续脚本访问时报错
+        if (!window.__assets) {
+          window.__assets = {}
         }
-      } catch (e) {
-        console.error('[Chaport] 插件加载后出错：', e)
       }
-    }
 
-    script.onerror = () => {
-      console.error('[Chaport] 插件加载失败')
-    }
+      script.onerror = () => {
+        console.error('[Chaport] 插件加载失败')
+      }
 
-    document.head.appendChild(script)
+      document.head.appendChild(script)
+    }, 50) // 轻微延迟注入
   }
 })
