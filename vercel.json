@@ -10,7 +10,7 @@
       ]
     },
     {
-      "source": "/(.*)\\.(js|css|ttf|otf|woff2)",  /* 保留你的原缓存配置 */
+      "source": "/(.*)\\.(js|css|ttf|otf|woff2)$",  /* 正则表达式末尾需加 $ */
       "headers": [
         {
           "key": "Cache-Control",
