@@ -1,7 +1,16 @@
 {
   "headers": [
     {
-      "source": "/(.*).(js|css|ttf|otf|woff2)",
+      "source": "/(.*)",  // 对所有路径生效
+      "headers": [
+        {
+          "key": "Content-Security-Policy",
+          "value": "script-src 'self' https://app.chaport.com https://www.googletagmanager.com https://www.google-analytics.com; connect-src https://app.chaport.com https://www.google-analytics.com"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)\\.(js|css|ttf|otf|woff2)",  // 保留你的原缓存配置
       "headers": [
         {
           "key": "Cache-Control",
