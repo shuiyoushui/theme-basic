@@ -15,7 +15,9 @@ export default defineNuxtPlugin(() => {
     }
 
     gtag('js', new Date())
-    gtag('config', GA_ID)
+    gtag('config', GA_ID, {
+      debug_mode: true  // ✅ 启用调试模式，确保数据出现在 GA DebugView
+    })
 
     // 挂载到全局（可选）
     window.gtag = gtag
