@@ -2,7 +2,6 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
 
-  //  添加 GA 的 app.head 配置
   app: {
     head: {
       script: [
@@ -10,26 +9,15 @@ export default defineNuxtConfig({
           hid: 'gtag-js',
           src: 'https://www.googletagmanager.com/gtag/js?id=G-S40NYGB5ZK',
           async: true,
-        },
-        {
-          hid: 'gtag-init',
-          innerHTML: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-S40NYGB5ZK');
-          `,
-          type: 'text/javascript',
-          charset: 'utf-8'
         }
-      ],
-      __dangerouslyDisableSanitizersByTagID: {
-        'gtag-init': ['innerHTML']
-      },
-      __dangerouslyDisableSanitizers: ['script']
-
+      ]
+      // ❌ 移除 innerHTML 注入方式以避免 CSP 报错
     }
   },
+
+  plugins: [
+    '~/plugins/gtag.client.ts' // ✅ 引入 GA 插件
+  ],
 
   runtimeConfig: {
     idatariverMerchantSecret: '',
