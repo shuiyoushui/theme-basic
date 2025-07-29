@@ -6,7 +6,7 @@ export default defineNuxtConfig({
     head: {
       script: [
         {
-          hid: 'gtag-js',
+          id: 'gtag-js',
           src: 'https://www.googletagmanager.com/gtag/js?id=G-S40NYGB5ZK',
           async: true,
         }
