@@ -1,10 +1,14 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  
-runtimeConfig: {
+
+  runtimeConfig: {
+    idatariverMerchantSecret: '',
     public: {
-      baseURL: process.env.BASE_URL || 'https://hub.cryptoboost.vip'
+      baseURL: process.env.BASE_URL || 'https://hub.cryptoboost.vip',
+      idatariver: 'https://www.idatariver.com',
+      idatariverServer: 'https://open.idatariver.com',
+      apiEncryptKey: 'Powered By iDataRiver.com',
     }
   },
 
@@ -23,18 +27,8 @@ runtimeConfig: {
 
   plugins: [
     '~/plugins/gtag.client.ts', // ✅ 引入 GA 插件
-    '~/plugins/chaport.client.ts' 
-
+    '~/plugins/chaport.client.ts'
   ],
-
-  runtimeConfig: {
-    idatariverMerchantSecret: '',
-    public: {
-      idatariver: 'https://www.idatariver.com',
-      idatariverServer: 'https://open.idatariver.com',
-      apiEncryptKey: 'Powered By iDataRiver.com',
-    }
-  },
 
   components: [
     {
