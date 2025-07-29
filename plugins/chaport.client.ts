@@ -1,3 +1,14 @@
+// plugins/chaport.client.ts
+
+// ✅ 声明 window.chaportConfig 类型，避免 TS 报错阻断插件执行
+declare global {
+  interface Window {
+    chaportConfig?: {
+      appId: string
+    }
+  }
+}
+
 export default defineNuxtPlugin(() => {
   if (process.client) {
     window.chaportConfig = {
