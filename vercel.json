@@ -5,7 +5,7 @@
       "headers": [
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://app.chaport.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https://app.chaport.com https://www.google-analytics.com https://vercel.live; connect-src 'self' https://app.chaport.com https://www.google-analytics.com https://vercel.live https://hub.cryptoboost.vip; frame-src https://vercel.live https://app.chaport.com; object-src 'none'; base-uri 'self';"
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://app.chaport.com https://vercel.live; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src * data: blob:; connect-src *; frame-src https://vercel.live https://app.chaport.com; object-src 'none'; base-uri 'self';"
         }
       ]
     },
