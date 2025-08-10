@@ -26,8 +26,9 @@ export default defineNuxtConfig({
   },
 
   plugins: [
-    '~/plugins/gtag.client.ts', // ✅ 引入 GA 插件
-    '~/plugins/chaport.client.ts'
+     '~/plugins/chaport.client.ts',
+    '~/plugins/gtag.client.ts' // ✅ 引入 GA 插件
+   
   ],
 
   components: [
