@@ -5,16 +5,7 @@
       "headers": [
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://app.chaport.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: blob: https://www.google-analytics.com https://app.chaport.com; connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://app.chaport.com https://hub.cryptoboost.vip; font-src 'self' https://fonts.gstatic.com data:; frame-src 'self' https://app.chaport.com; base-uri 'self'; object-src 'none';"
-        }
-      ]
-    },
-    {
-      "source": "/(.*)\\.(js|css|ttf|otf|woff2)$",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, s-maxage=3600"
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://app.chaport.com https://assets.chaport.com https://cdn.chaport.com https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://assets.chaport.com https://fonts.googleapis.com; img-src 'self' data: blob: https://app.chaport.com https://assets.chaport.com https://cdn.chaport.com; font-src 'self' data: https://assets.chaport.com https://fonts.gstatic.com; connect-src 'self' https://app.chaport.com https://api.chaport.com https://www.google-analytics.com wss://ws.chaport.com; frame-src https://app.chaport.com; object-src 'none'; base-uri 'self';"
         }
       ]
     }
